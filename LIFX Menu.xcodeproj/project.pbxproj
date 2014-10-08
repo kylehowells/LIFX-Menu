@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C721970919E5F79600FCA5CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C721970819E5F79600FCA5CB /* main.m */; };
+		C721970C19E5F79600FCA5CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C721970B19E5F79600FCA5CB /* AppDelegate.m */; };
+		C721970E19E5F79600FCA5CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C721970D19E5F79600FCA5CB /* Images.xcassets */; };
+		C721971119E5F79700FCA5CB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C721970F19E5F79700FCA5CB /* MainMenu.xib */; };
+		C721971D19E5F79700FCA5CB /* LIFX_MenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C721971C19E5F79700FCA5CB /* LIFX_MenuTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C721971719E5F79700FCA5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C72196FB19E5F79600FCA5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C721970219E5F79600FCA5CB;
+			remoteInfo = "LIFX Menu";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C721970319E5F79600FCA5CB /* LIFX Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LIFX Menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C721970719E5F79600FCA5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C721970819E5F79600FCA5CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C721970A19E5F79600FCA5CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C721970B19E5F79600FCA5CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C721970D19E5F79600FCA5CB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C721971019E5F79700FCA5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C721971619E5F79700FCA5CB /* LIFX MenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LIFX MenuTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C721971B19E5F79700FCA5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C721971C19E5F79700FCA5CB /* LIFX_MenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LIFX_MenuTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C721970019E5F79600FCA5CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C721971319E5F79700FCA5CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C72196FA19E5F79600FCA5CB = {
+			isa = PBXGroup;
+			children = (
+				C721970519E5F79600FCA5CB /* LIFX Menu */,
+				C721971919E5F79700FCA5CB /* LIFX MenuTests */,
+				C721970419E5F79600FCA5CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C721970419E5F79600FCA5CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C721970319E5F79600FCA5CB /* LIFX Menu.app */,
+				C721971619E5F79700FCA5CB /* LIFX MenuTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C721970519E5F79600FCA5CB /* LIFX Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C721970A19E5F79600FCA5CB /* AppDelegate.h */,
+				C721970B19E5F79600FCA5CB /* AppDelegate.m */,
+				C721970D19E5F79600FCA5CB /* Images.xcassets */,
+				C721970F19E5F79700FCA5CB /* MainMenu.xib */,
+				C721970619E5F79600FCA5CB /* Supporting Files */,
+			);
+			path = "LIFX Menu";
+			sourceTree = "<group>";
+		};
+		C721970619E5F79600FCA5CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C721970719E5F79600FCA5CB /* Info.plist */,
+				C721970819E5F79600FCA5CB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C721971919E5F79700FCA5CB /* LIFX MenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				C721971C19E5F79700FCA5CB /* LIFX_MenuTests.m */,
+				C721971A19E5F79700FCA5CB /* Supporting Files */,
+			);
+			path = "LIFX MenuTests";
+			sourceTree = "<group>";
+		};
+		C721971A19E5F79700FCA5CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C721971B19E5F79700FCA5CB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C721970219E5F79600FCA5CB /* LIFX Menu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C721972019E5F79700FCA5CB /* Build configuration list for PBXNativeTarget "LIFX Menu" */;
+			buildPhases = (
+				C72196FF19E5F79600FCA5CB /* Sources */,
+				C721970019E5F79600FCA5CB /* Frameworks */,
+				C721970119E5F79600FCA5CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LIFX Menu";
+			productName = "LIFX Menu";
+			productReference = C721970319E5F79600FCA5CB /* LIFX Menu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C721971519E5F79700FCA5CB /* LIFX MenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C721972319E5F79700FCA5CB /* Build configuration list for PBXNativeTarget "LIFX MenuTests" */;
+			buildPhases = (
+				C721971219E5F79700FCA5CB /* Sources */,
+				C721971319E5F79700FCA5CB /* Frameworks */,
+				C721971419E5F79700FCA5CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C721971819E5F79700FCA5CB /* PBXTargetDependency */,
+			);
+			name = "LIFX MenuTests";
+			productName = "LIFX MenuTests";
+			productReference = C721971619E5F79700FCA5CB /* LIFX MenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C72196FB19E5F79600FCA5CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Kyle Howells";
+				TargetAttributes = {
+					C721970219E5F79600FCA5CB = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					C721971519E5F79700FCA5CB = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = C721970219E5F79600FCA5CB;
+					};
+				};
+			};
+			buildConfigurationList = C72196FE19E5F79600FCA5CB /* Build configuration list for PBXProject "LIFX Menu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C72196FA19E5F79600FCA5CB;
+			productRefGroup = C721970419E5F79600FCA5CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C721970219E5F79600FCA5CB /* LIFX Menu */,
+				C721971519E5F79700FCA5CB /* LIFX MenuTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C721970119E5F79600FCA5CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C721970E19E5F79600FCA5CB /* Images.xcassets in Resources */,
+				C721971119E5F79700FCA5CB /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C721971419E5F79700FCA5CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C72196FF19E5F79600FCA5CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C721970C19E5F79600FCA5CB /* AppDelegate.m in Sources */,
+				C721970919E5F79600FCA5CB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C721971219E5F79700FCA5CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C721971D19E5F79700FCA5CB /* LIFX_MenuTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C721971819E5F79700FCA5CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C721970219E5F79600FCA5CB /* LIFX Menu */;
+			targetProxy = C721971719E5F79700FCA5CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C721970F19E5F79700FCA5CB /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C721971019E5F79700FCA5CB /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C721971E19E5F79700FCA5CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C721971F19E5F79700FCA5CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C721972119E5F79700FCA5CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "LIFX Menu/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C721972219E5F79700FCA5CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "LIFX Menu/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C721972419E5F79700FCA5CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LIFX MenuTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LIFX Menu.app/Contents/MacOS/LIFX Menu";
+			};
+			name = Debug;
+		};
+		C721972519E5F79700FCA5CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LIFX MenuTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LIFX Menu.app/Contents/MacOS/LIFX Menu";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C72196FE19E5F79600FCA5CB /* Build configuration list for PBXProject "LIFX Menu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C721971E19E5F79700FCA5CB /* Debug */,
+				C721971F19E5F79700FCA5CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C721972019E5F79700FCA5CB /* Build configuration list for PBXNativeTarget "LIFX Menu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C721972119E5F79700FCA5CB /* Debug */,
+				C721972219E5F79700FCA5CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C721972319E5F79700FCA5CB /* Build configuration list for PBXNativeTarget "LIFX MenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C721972419E5F79700FCA5CB /* Debug */,
+				C721972519E5F79700FCA5CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C72196FB19E5F79600FCA5CB /* Project object */;
+}
