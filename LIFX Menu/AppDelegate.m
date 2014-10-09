@@ -33,6 +33,7 @@
 	self.statusItem.title = @"";
 	NSImage *icon = [NSImage imageNamed:@"lifx-icon"];
 	[icon setScalesWhenResized:YES];
+	[icon setTemplate:YES];
 	self.statusItem.image = icon;
 	self.statusItem.highlightMode = YES;
 	
