@@ -236,14 +236,16 @@
 	if ([self autoLaunch]) {
 		if (![loginController launchAtLogin]) {
 			[loginController setLaunchAtLogin:YES];
-			[autorunItem setState:NSOnState];
 		}
+		
+		[autorunItem setState:NSOnState];
 	}
 	else {
 		if ([loginController launchAtLogin]) {
 			[loginController setLaunchAtLogin:NO];
-			[autorunItem setState:NSOffState];
 		}
+		
+		[autorunItem setState:NSOffState];
 	}
 }
 
