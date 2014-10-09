@@ -9,14 +9,19 @@
 #import "AppDelegate.h"
 #import <LIFXKit/LIFXKit.h>
 
+
 @interface AppDelegate () <LFXLightCollectionObserver, LFXLightObserver>
 @property (weak) IBOutlet NSWindow *window;
+@property (nonatomic, strong) NSStatusItem *statusItem;
+@property (nonatomic, strong) NSMenu *menu;
 
 /**
  *  All the NSMenuItem objects for LFXLight's we have currently detected.
  */
 @property (nonatomic, strong) NSMutableArray *lightItems;
 @end
+
+
 
 @implementation AppDelegate
 
