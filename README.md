@@ -21,6 +21,6 @@ Screenshots
 
 Download
 =========
-[**Latest version (v0.9)**](https://github.com/freerunnering/LIFX-Menu/releases/download/v0.9/LIFX.Menu.app.zip) - [All versions](https://github.com/freerunnering/LIFX-Menu/releases/)
+[**Latest version (v0.9.5)**](https://github.com/freerunnering/LIFX-Menu/releases/download/v0.9.1/LIFX.Menu.app.zip) - [All versions](https://github.com/freerunnering/LIFX-Menu/releases/)
 
 It is signed with a developer ID so GateKeeper shouldn't complain.
