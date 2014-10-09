@@ -12,7 +12,6 @@
 
 
 @interface AppDelegate () <LFXLightCollectionObserver, LFXLightObserver>
-@property (weak) IBOutlet NSWindow *window;
 @property (nonatomic, strong) NSStatusItem *statusItem;
 @property (nonatomic, strong) NSMenu *menu;
 
