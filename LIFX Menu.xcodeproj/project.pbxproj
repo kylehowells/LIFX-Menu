@@ -12,11 +12,12 @@
 		C721970E19E5F79600FCA5CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C721970D19E5F79600FCA5CB /* Images.xcassets */; };
 		C721971119E5F79700FCA5CB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C721970F19E5F79700FCA5CB /* MainMenu.xib */; };
 		C721971D19E5F79700FCA5CB /* LIFX_MenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C721971C19E5F79700FCA5CB /* LIFX_MenuTests.m */; };
-		C721973419E5FA1100FCA5CB /* libLIFXKitMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C721973019E5F98900FCA5CB /* libLIFXKitMac.a */; };
 		C721973719E5FA1200FCA5CB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C721973519E5FA1200FCA5CB /* libz.dylib */; };
 		C721973819E5FA1200FCA5CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C721973619E5FA1200FCA5CB /* SystemConfiguration.framework */; };
 		C721974219E607BD00FCA5CB /* lifx-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C721974019E607BD00FCA5CB /* lifx-icon.png */; };
 		C721974319E607BD00FCA5CB /* lifx-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C721974119E607BD00FCA5CB /* lifx-icon@2x.png */; };
+		C721974819E622D400FCA5CB /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; };
+		C721974A19E622FD00FCA5CB /* LIFXKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,28 +28,20 @@
 			remoteGlobalIDString = C721970219E5F79600FCA5CB;
 			remoteInfo = "LIFX Menu";
 		};
-		C721972D19E5F98900FCA5CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C721972619E5F98800FCA5CB /* LIFXKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 01A9104D18D027B200AD0A54;
-			remoteInfo = "LIFXKit iOS Static Library";
-		};
-		C721972F19E5F98900FCA5CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C721972619E5F98800FCA5CB /* LIFXKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 838EE913190626E6006080E1;
-			remoteInfo = "LIFXKit OS X Static Library";
-		};
-		C721973119E5F98900FCA5CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C721972619E5F98800FCA5CB /* LIFXKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 83A18351190889C500CBF7E4;
-			remoteInfo = "LIFXKit OS X Framework";
-		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C721974919E622E700FCA5CB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C721974A19E622FD00FCA5CB /* LIFXKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C721970319E5F79600FCA5CB /* LIFX Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LIFX Menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,11 +54,11 @@
 		C721971619E5F79700FCA5CB /* LIFX MenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LIFX MenuTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C721971B19E5F79700FCA5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C721971C19E5F79700FCA5CB /* LIFX_MenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LIFX_MenuTests.m; sourceTree = "<group>"; };
-		C721972619E5F98800FCA5CB /* LIFXKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LIFXKit.xcodeproj; path = "../../../../Downloads/LIFXKit-master/LIFXKit/LIFXKit.xcodeproj"; sourceTree = "<group>"; };
 		C721973519E5FA1200FCA5CB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C721973619E5FA1200FCA5CB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C721974019E607BD00FCA5CB /* lifx-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lifx-icon.png"; sourceTree = "<group>"; };
 		C721974119E607BD00FCA5CB /* lifx-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lifx-icon@2x.png"; sourceTree = "<group>"; };
+		C721974619E622B200FCA5CB /* LIFXKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LIFXKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +68,7 @@
 			files = (
 				C721973719E5FA1200FCA5CB /* libz.dylib in Frameworks */,
 				C721973819E5FA1200FCA5CB /* SystemConfiguration.framework in Frameworks */,
-				C721973419E5FA1100FCA5CB /* libLIFXKitMac.a in Frameworks */,
+				C721974819E622D400FCA5CB /* LIFXKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,9 +85,6 @@
 		C72196FA19E5F79600FCA5CB = {
 			isa = PBXGroup;
 			children = (
-				C721973519E5FA1200FCA5CB /* libz.dylib */,
-				C721973619E5FA1200FCA5CB /* SystemConfiguration.framework */,
-				C721972619E5F98800FCA5CB /* LIFXKit.xcodeproj */,
 				C721970519E5F79600FCA5CB /* LIFX Menu */,
 				C721971919E5F79700FCA5CB /* LIFX MenuTests */,
 				C721970419E5F79600FCA5CB /* Products */,
@@ -125,6 +115,7 @@
 		C721970619E5F79600FCA5CB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C721974519E6229C00FCA5CB /* Frameworks */,
 				C721974019E607BD00FCA5CB /* lifx-icon.png */,
 				C721974119E607BD00FCA5CB /* lifx-icon@2x.png */,
 				C721970719E5F79600FCA5CB /* Info.plist */,
@@ -150,14 +141,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C721972719E5F98800FCA5CB /* Products */ = {
+		C721974519E6229C00FCA5CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C721972E19E5F98900FCA5CB /* libLIFXKit.a */,
-				C721973019E5F98900FCA5CB /* libLIFXKitMac.a */,
-				C721973219E5F98900FCA5CB /* LIFXKit.framework */,
+				C721974619E622B200FCA5CB /* LIFXKit.framework */,
+				C721973619E5FA1200FCA5CB /* SystemConfiguration.framework */,
+				C721973519E5FA1200FCA5CB /* libz.dylib */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +161,7 @@
 				C72196FF19E5F79600FCA5CB /* Sources */,
 				C721970019E5F79600FCA5CB /* Frameworks */,
 				C721970119E5F79600FCA5CB /* Resources */,
+				C721974919E622E700FCA5CB /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -228,12 +220,6 @@
 			mainGroup = C72196FA19E5F79600FCA5CB;
 			productRefGroup = C721970419E5F79600FCA5CB /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C721972719E5F98800FCA5CB /* Products */;
-					ProjectRef = C721972619E5F98800FCA5CB /* LIFXKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C721970219E5F79600FCA5CB /* LIFX Menu */,
@@ -241,30 +227,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C721972E19E5F98900FCA5CB /* libLIFXKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libLIFXKit.a;
-			remoteRef = C721972D19E5F98900FCA5CB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C721973019E5F98900FCA5CB /* libLIFXKitMac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libLIFXKitMac.a;
-			remoteRef = C721972F19E5F98900FCA5CB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C721973219E5F98900FCA5CB /* LIFXKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = LIFXKit.framework;
-			remoteRef = C721973119E5F98900FCA5CB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C721970119E5F79600FCA5CB /* Resources */ = {
@@ -409,6 +371,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LIFX",
+					Menu,
+				);
 				INFOPLIST_FILE = "LIFX Menu/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
@@ -422,6 +389,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LIFX",
+					Menu,
+				);
 				INFOPLIST_FILE = "LIFX Menu/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
