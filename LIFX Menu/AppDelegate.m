@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 Kyle Howells. All rights reserved.
 //
 
-#import "AppDelegate.h"
 #import <LIFXKit/LIFXKit.h>
+#import "AppDelegate.h"
+#import "LaunchAtLoginController.h"
 
 
 @interface AppDelegate () <LFXLightCollectionObserver, LFXLightObserver>
@@ -23,10 +24,22 @@
 
 
 
-@implementation AppDelegate
+@implementation AppDelegate{
+	LaunchAtLoginController *loginController;
+	NSMenuItem *autorunItem;
+}
+
+#pragma mark - Application Delegate methods
 
 -(void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	// User defaults
+	[[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"AutoLaunch" : @YES }];
+	
+	
+	// Variable setup
 	self.lightItems = [NSMutableArray array];
+	loginController = [[LaunchAtLoginController alloc] init];
+	
 	
 	// Status bar item
 	self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
@@ -42,17 +55,30 @@
 	self.menu = [[NSMenu alloc] init];
 	
 	// Always there buttons
-	[self.menu addItemWithTitle:@"Turn lights ON" action:@selector(allLightsOn) keyEquivalent:@""];
-	[self.menu addItemWithTitle:@"Turn lights OFF" action:@selector(allLightsOff) keyEquivalent:@""];
+	[self.menu addItemWithTitle:@"Turn all lights on" action:@selector(allLightsOn) keyEquivalent:@""];
+	[self.menu addItemWithTitle:@"Turn all lights off" action:@selector(allLightsOff) keyEquivalent:@""];
 	
 	// Separator to the section with the individual lights
 	[self.menu addItem:[NSMenuItem separatorItem]];
+	
+	
+	[self.menu addItem:[NSMenuItem separatorItem]];
+	autorunItem = [[NSMenuItem alloc] initWithTitle:@"Launch at login" action:@selector(autoLaunchPressed) keyEquivalent:@""];
+	[self.menu addItem:autorunItem];
+	[self updateAutoLaunch];
+	
 	self.statusItem.menu = self.menu;
 	
 	
 	// Monitor for changes
 	[[[LFXClient sharedClient] localNetworkContext].allLightsCollection addLightCollectionObserver:self];
 }
+
+-(void)applicationWillTerminate:(NSNotification *)aNotification {
+	// Insert code here to tear down your application
+}
+
+
 
 
 
@@ -96,7 +122,7 @@
 	[item setRepresentedObject:light];
 	[self updateLightMenuItem:item];
 	
-	[self.menu addItem:item];
+	[self.menu insertItem:item atIndex:(self.menu.numberOfItems - 2)];
 	[self.lightItems addObject:item];
 	
 	[light addLightObserver:self];
@@ -143,29 +169,6 @@
 
 
 
-#pragma mark - Helper methods
-
--(NSMenuItem*)menuItemForLight:(LFXLight*)light{
-	NSMenuItem *item = nil;
-	
-	for (NSMenuItem *menuItem in self.lightItems) {
-		LFXLight *itemLight = [menuItem representedObject];
-		if ([light.deviceID isEqualToString:itemLight.deviceID]) {
-			item = menuItem;
-			break;
-		}
-	}
-	
-	return item;
-}
--(NSString*)titleForLight:(LFXLight*)light{
-	return (light.label ?: light.deviceID);
-}
-
-
-
-
-
 
 
 
@@ -192,8 +195,67 @@
 
 
 
--(void)applicationWillTerminate:(NSNotification *)aNotification {
-	// Insert code here to tear down your application
+
+
+#pragma mark - Helper methods
+
+-(NSMenuItem*)menuItemForLight:(LFXLight*)light{
+	NSMenuItem *item = nil;
+	
+	for (NSMenuItem *menuItem in self.lightItems) {
+		LFXLight *itemLight = [menuItem representedObject];
+		if ([light.deviceID isEqualToString:itemLight.deviceID]) {
+			item = menuItem;
+			break;
+		}
+	}
+	
+	return item;
 }
+-(NSString*)titleForLight:(LFXLight*)light{
+	return (light.label ?: light.deviceID);
+}
+
+
+
+
+
+#pragma mark - Auto launch methods
+
+-(BOOL)autoLaunch{
+	id object = [[NSUserDefaults standardUserDefaults] objectForKey:@"AutoLaunch"];
+	return (object ? [object boolValue] : YES);
+}
+-(void)setAutoLaunch:(BOOL)autoLaunch{
+	[[NSUserDefaults standardUserDefaults] setBool:autoLaunch forKey:@"AutoLaunch"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
+	[self updateAutoLaunch];
+}
+
+-(void)updateAutoLaunch{
+	if ([self autoLaunch]) {
+		if (![loginController launchAtLogin]) {
+			[loginController setLaunchAtLogin:YES];
+			[autorunItem setState:NSOnState];
+		}
+	}
+	else {
+		if ([loginController launchAtLogin]) {
+			[loginController setLaunchAtLogin:NO];
+			[autorunItem setState:NSOffState];
+		}
+	}
+}
+
+-(void)autoLaunchPressed{
+	if (autorunItem.state == NSOnState) {
+		[self setAutoLaunch:NO];
+	}
+	else {
+		[self setAutoLaunch:YES];
+	}
+}
+
 
 @end

@@ -13,11 +13,12 @@
 		C721971119E5F79700FCA5CB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C721970F19E5F79700FCA5CB /* MainMenu.xib */; };
 		C721971D19E5F79700FCA5CB /* LIFX_MenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C721971C19E5F79700FCA5CB /* LIFX_MenuTests.m */; };
 		C721973719E5FA1200FCA5CB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C721973519E5FA1200FCA5CB /* libz.dylib */; };
-		C721973819E5FA1200FCA5CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C721973619E5FA1200FCA5CB /* SystemConfiguration.framework */; };
 		C721974219E607BD00FCA5CB /* lifx-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C721974019E607BD00FCA5CB /* lifx-icon.png */; };
 		C721974319E607BD00FCA5CB /* lifx-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C721974119E607BD00FCA5CB /* lifx-icon@2x.png */; };
 		C721974819E622D400FCA5CB /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; };
 		C721974A19E622FD00FCA5CB /* LIFXKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C721975319E631D400FCA5CB /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = C721975219E631D400FCA5CB /* LaunchAtLoginController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C721975419E631FD00FCA5CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C721973619E5FA1200FCA5CB /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,9 @@
 		C721974019E607BD00FCA5CB /* lifx-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lifx-icon.png"; sourceTree = "<group>"; };
 		C721974119E607BD00FCA5CB /* lifx-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lifx-icon@2x.png"; sourceTree = "<group>"; };
 		C721974619E622B200FCA5CB /* LIFXKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LIFXKit.framework; sourceTree = "<group>"; };
+		C721974F19E62DC800FCA5CB /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		C721975119E631D400FCA5CB /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
+		C721975219E631D400FCA5CB /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C721975419E631FD00FCA5CB /* SystemConfiguration.framework in Frameworks */,
 				C721973719E5FA1200FCA5CB /* libz.dylib in Frameworks */,
-				C721973819E5FA1200FCA5CB /* SystemConfiguration.framework in Frameworks */,
 				C721974819E622D400FCA5CB /* LIFXKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +109,7 @@
 			children = (
 				C721970A19E5F79600FCA5CB /* AppDelegate.h */,
 				C721970B19E5F79600FCA5CB /* AppDelegate.m */,
+				C721974E19E6292A00FCA5CB /* Launch at login */,
 				C721970D19E5F79600FCA5CB /* Images.xcassets */,
 				C721970F19E5F79700FCA5CB /* MainMenu.xib */,
 				C721970619E5F79600FCA5CB /* Supporting Files */,
@@ -145,10 +150,20 @@
 			isa = PBXGroup;
 			children = (
 				C721974619E622B200FCA5CB /* LIFXKit.framework */,
+				C721974F19E62DC800FCA5CB /* ServiceManagement.framework */,
 				C721973619E5FA1200FCA5CB /* SystemConfiguration.framework */,
 				C721973519E5FA1200FCA5CB /* libz.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C721974E19E6292A00FCA5CB /* Launch at login */ = {
+			isa = PBXGroup;
+			children = (
+				C721975119E631D400FCA5CB /* LaunchAtLoginController.h */,
+				C721975219E631D400FCA5CB /* LaunchAtLoginController.m */,
+			);
+			name = "Launch at login";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C721975319E631D400FCA5CB /* LaunchAtLoginController.m in Sources */,
 				C721970C19E5F79600FCA5CB /* AppDelegate.m in Sources */,
 				C721970919E5F79600FCA5CB /* main.m in Sources */,
 			);
