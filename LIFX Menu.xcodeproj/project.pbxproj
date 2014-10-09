@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C721034519E6BA380085E99B /* LIFXKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C721034619E6BBC30085E99B /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; };
 		C721970919E5F79600FCA5CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C721970819E5F79600FCA5CB /* main.m */; };
 		C721970C19E5F79600FCA5CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C721970B19E5F79600FCA5CB /* AppDelegate.m */; };
 		C721970E19E5F79600FCA5CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C721970D19E5F79600FCA5CB /* Images.xcassets */; };
@@ -15,8 +17,6 @@
 		C721973719E5FA1200FCA5CB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C721973519E5FA1200FCA5CB /* libz.dylib */; };
 		C721974219E607BD00FCA5CB /* lifx-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C721974019E607BD00FCA5CB /* lifx-icon.png */; };
 		C721974319E607BD00FCA5CB /* lifx-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C721974119E607BD00FCA5CB /* lifx-icon@2x.png */; };
-		C721974819E622D400FCA5CB /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; };
-		C721974A19E622FD00FCA5CB /* LIFXKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C721975319E631D400FCA5CB /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = C721975219E631D400FCA5CB /* LaunchAtLoginController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C721975419E631FD00FCA5CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C721973619E5FA1200FCA5CB /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
@@ -38,7 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C721974A19E622FD00FCA5CB /* LIFXKit.framework in CopyFiles */,
+				C721034519E6BA380085E99B /* LIFXKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +72,7 @@
 			files = (
 				C721975419E631FD00FCA5CB /* SystemConfiguration.framework in Frameworks */,
 				C721973719E5FA1200FCA5CB /* libz.dylib in Frameworks */,
-				C721974819E622D400FCA5CB /* LIFXKit.framework in Frameworks */,
+				C721034619E6BBC30085E99B /* LIFXKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +389,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/LIFX",
 					Menu,
 				);
@@ -407,6 +408,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/LIFX",
 					Menu,
 				);
