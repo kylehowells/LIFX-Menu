@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Kyle Howells. All rights reserved.
 //
 
-#import <LIFXKit/LIFXKit.h>
+#import "LIFXKit.framework/Headers/LIFXKit.h"
 #import "AppDelegate.h"
 #import "LaunchAtLoginController.h"
 
@@ -102,7 +102,10 @@
 	[light setPowerState:((light.powerState == LFXPowerStateOn) ? LFXPowerStateOff : LFXPowerStateOn)];
 }
 
-
+-(void)changeBrightness:(LXMSliderMenuItem *)item{
+	LFXLight *light = [item representedObject];
+    [light setColor:[[light color] colorWithBrightness:[[item slider] floatValue]]];
+}
 
 
 
@@ -119,6 +122,13 @@
 	
 	NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[self titleForLight:light] action:@selector(toggleLight:) keyEquivalent:@""];
 	[item setRepresentedObject:light];
+    
+    LXMSliderMenuItem *sliderItem = [[LXMSliderMenuItem alloc] initWithTitle:@"Brightness" target:self action:@selector(changeBrightness:)];
+    [sliderItem setRepresentedObject:light];
+    
+    [item setSubmenu:[[NSMenu alloc] init]];
+    [[item submenu] addItem:sliderItem];
+    
 	[self updateLightMenuItem:item];
 	
 	[self.menu insertItem:item atIndex:(self.menu.numberOfItems - 2)];
@@ -158,8 +168,13 @@
 -(void)updateLightMenuItem:(NSMenuItem*)item{
 	LFXLight *light = [item representedObject];
 	
-	[item setTitle:(light.label ?: light.deviceID)];
+	[item setTitle:[self titleForLight:light]];
 	[item setState:((light.powerState == LFXPowerStateOn) ? NSOnState : NSOffState)];
+    
+    LXMSliderMenuItem *sliderMenuItem = (LXMSliderMenuItem *)[[item submenu] itemWithTitle:@"Brightness"];
+    [[sliderMenuItem slider] setMinValue:LFXHSBKColorMinBrightness];
+    [[sliderMenuItem slider] setMaxValue:LFXHSBKColorMaxBrightness];
+    [[sliderMenuItem slider] setFloatValue:light.color.brightness];
 }
 
 
@@ -189,6 +204,9 @@
 -(void)light:(LFXLight *)light didChangePowerState:(LFXPowerState)powerState{
 	[self updateLight:light];
 }
+-(void)light:(LFXLight *)light didChangeColor:(LFXHSBKColor *)color {
+    [self updateLight:light];
+}
 
 
 
@@ -212,7 +230,7 @@
 	return item;
 }
 -(NSString*)titleForLight:(LFXLight*)light{
-	return (light.label ?: light.deviceID);
+	return ([light.label length] > 0 ? light.label : light.deviceID);
 }
 
 

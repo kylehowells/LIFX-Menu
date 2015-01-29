@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C721034519E6BA380085E99B /* LIFXKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C721034619E6BBC30085E99B /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; };
+		AB0FC2B81A79F1A700D90728 /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; };
+		AB0FC2BA1A79F1BF00D90728 /* LIFXKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C721974619E622B200FCA5CB /* LIFXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AB0FC2BE1A79FDC000D90728 /* LXMSliderMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0FC2BD1A79FDC000D90728 /* LXMSliderMenuItem.m */; };
 		C721970919E5F79600FCA5CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C721970819E5F79600FCA5CB /* main.m */; };
 		C721970C19E5F79600FCA5CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C721970B19E5F79600FCA5CB /* AppDelegate.m */; };
 		C721970E19E5F79600FCA5CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C721970D19E5F79600FCA5CB /* Images.xcassets */; };
@@ -32,19 +33,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C721974919E622E700FCA5CB /* CopyFiles */ = {
+		AB0FC2BB1A79F1BF00D90728 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C721034519E6BA380085E99B /* LIFXKit.framework in CopyFiles */,
+				AB0FC2BA1A79F1BF00D90728 /* LIFXKit.framework in Embed Frameworks */,
 			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AB0FC2BC1A79FDC000D90728 /* LXMSliderMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMSliderMenuItem.h; sourceTree = "<group>"; };
+		AB0FC2BD1A79FDC000D90728 /* LXMSliderMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMSliderMenuItem.m; sourceTree = "<group>"; };
 		C721970319E5F79600FCA5CB /* LIFX Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LIFX Menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C721970719E5F79600FCA5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C721970819E5F79600FCA5CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,7 +76,7 @@
 			files = (
 				C721975419E631FD00FCA5CB /* SystemConfiguration.framework in Frameworks */,
 				C721973719E5FA1200FCA5CB /* libz.dylib in Frameworks */,
-				C721034619E6BBC30085E99B /* LIFXKit.framework in Frameworks */,
+				AB0FC2B81A79F1A700D90728 /* LIFXKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +113,8 @@
 			children = (
 				C721970A19E5F79600FCA5CB /* AppDelegate.h */,
 				C721970B19E5F79600FCA5CB /* AppDelegate.m */,
+				AB0FC2BC1A79FDC000D90728 /* LXMSliderMenuItem.h */,
+				AB0FC2BD1A79FDC000D90728 /* LXMSliderMenuItem.m */,
 				C721974E19E6292A00FCA5CB /* Launch at login */,
 				C721970D19E5F79600FCA5CB /* Images.xcassets */,
 				C721970F19E5F79700FCA5CB /* MainMenu.xib */,
@@ -176,7 +182,7 @@
 				C72196FF19E5F79600FCA5CB /* Sources */,
 				C721970019E5F79600FCA5CB /* Frameworks */,
 				C721970119E5F79600FCA5CB /* Resources */,
-				C721974919E622E700FCA5CB /* CopyFiles */,
+				AB0FC2BB1A79F1BF00D90728 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,7 +222,7 @@
 				TargetAttributes = {
 					C721970219E5F79600FCA5CB = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = NFTL2336WY;
+						DevelopmentTeam = T7QSHJ836T;
 					};
 					C721971519E5F79700FCA5CB = {
 						CreatedOnToolsVersion = 6.0;
@@ -271,6 +277,7 @@
 			files = (
 				C721975319E631D400FCA5CB /* LaunchAtLoginController.m in Sources */,
 				C721970C19E5F79600FCA5CB /* AppDelegate.m in Sources */,
+				AB0FC2BE1A79FDC000D90728 /* LXMSliderMenuItem.m in Sources */,
 				C721970919E5F79600FCA5CB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,11 +392,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/LIFX",
+					Menu,
 					"$(PROJECT_DIR)/LIFX",
 					Menu,
 				);
@@ -404,11 +412,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/LIFX",
+					Menu,
 					"$(PROJECT_DIR)/LIFX",
 					Menu,
 				);
