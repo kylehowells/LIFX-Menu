@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Kyle Howells. All rights reserved.
 //
 
-#import <LIFXKit/LIFXKit.h>
+#import "LIFXKit.framework/Headers/LIFXKit.h"
 #import "AppDelegate.h"
 #import "LaunchAtLoginController.h"
-
+#import "LXMSliderMenuItem.h"
 
 @interface AppDelegate () <LFXLightCollectionObserver, LFXLightObserver>
 @property (nonatomic, strong) NSStatusItem *statusItem;
@@ -102,8 +102,27 @@
 	[light setPowerState:((light.powerState == LFXPowerStateOn) ? LFXPowerStateOff : LFXPowerStateOn)];
 }
 
+-(void)changeBrightness:(LXMSliderMenuItem *)item{
+	LFXLight *light = [item representedObject];
+    [light setColor:[[light color] colorWithBrightness:[[item slider] floatValue]]];
+}
 
-
+-(void)changeLabel:(NSMenuItem *)item{
+    LFXLight *light = [item representedObject];
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Enter new name:"];
+    [alert addButtonWithTitle:@"Ok"];
+    [alert addButtonWithTitle:@"Cancel"];
+    
+    NSTextField *input = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 200, 24)];
+    [input setStringValue:[light label]];
+    
+    [alert setAccessoryView:input];
+    NSInteger button = [alert runModal];
+    if (button == NSAlertFirstButtonReturn) {
+        [light setLabel:[input stringValue]];
+    }
+}
 
 
 
@@ -119,6 +138,17 @@
 	
 	NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[self titleForLight:light] action:@selector(toggleLight:) keyEquivalent:@""];
 	[item setRepresentedObject:light];
+    
+    LXMSliderMenuItem *sliderItem = [[LXMSliderMenuItem alloc] initWithTitle:@"Brightness" target:self action:@selector(changeBrightness:)];
+    [sliderItem setRepresentedObject:light];
+    
+    NSMenuItem *labelItem = [[NSMenuItem alloc] initWithTitle:@"Set label..." action:@selector(changeLabel:) keyEquivalent:@""];
+    [labelItem setRepresentedObject:light];
+    
+    [item setSubmenu:[[NSMenu alloc] init]];
+    [[item submenu] addItem:sliderItem];
+    [[item submenu] addItem:labelItem];
+    
 	[self updateLightMenuItem:item];
 	
 	[self.menu insertItem:item atIndex:(self.menu.numberOfItems - 2)];
@@ -126,6 +156,7 @@
 	
 	[light addLightObserver:self];
 }
+
 /**
  *  Removes the light from the menu and array. Also removes self as an observer for that light.
  */
@@ -158,8 +189,13 @@
 -(void)updateLightMenuItem:(NSMenuItem*)item{
 	LFXLight *light = [item representedObject];
 	
-	[item setTitle:(light.label ?: light.deviceID)];
+	[item setTitle:[self titleForLight:light]];
 	[item setState:((light.powerState == LFXPowerStateOn) ? NSOnState : NSOffState)];
+    
+    LXMSliderMenuItem *sliderMenuItem = (LXMSliderMenuItem *)[[item submenu] itemWithTitle:@"Brightness"];
+    [[sliderMenuItem slider] setMinValue:LFXHSBKColorMinBrightness];
+    [[sliderMenuItem slider] setMaxValue:LFXHSBKColorMaxBrightness];
+    [[sliderMenuItem slider] setFloatValue:light.color.brightness];
 }
 
 
@@ -189,6 +225,9 @@
 -(void)light:(LFXLight *)light didChangePowerState:(LFXPowerState)powerState{
 	[self updateLight:light];
 }
+-(void)light:(LFXLight *)light didChangeColor:(LFXHSBKColor *)color {
+    [self updateLight:light];
+}
 
 
 
@@ -212,7 +251,7 @@
 	return item;
 }
 -(NSString*)titleForLight:(LFXLight*)light{
-	return (light.label ?: light.deviceID);
+	return ([light.label length] > 0 ? light.label : light.deviceID);
 }
 
 
