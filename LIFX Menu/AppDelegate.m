@@ -107,6 +107,22 @@
     [light setColor:[[light color] colorWithBrightness:[[item slider] floatValue]]];
 }
 
+-(void)changeLabel:(NSMenuItem *)item{
+    LFXLight *light = [item representedObject];
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Enter new name:"];
+    [alert addButtonWithTitle:@"Ok"];
+    [alert addButtonWithTitle:@"Cancel"];
+    
+    NSTextField *input = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 200, 24)];
+    [input setStringValue:[light label]];
+    
+    [alert setAccessoryView:input];
+    NSInteger button = [alert runModal];
+    if (button == NSAlertFirstButtonReturn) {
+        [light setLabel:[input stringValue]];
+    }
+}
 
 
 
@@ -126,8 +142,12 @@
     LXMSliderMenuItem *sliderItem = [[LXMSliderMenuItem alloc] initWithTitle:@"Brightness" target:self action:@selector(changeBrightness:)];
     [sliderItem setRepresentedObject:light];
     
+    NSMenuItem *labelItem = [[NSMenuItem alloc] initWithTitle:@"Set label..." action:@selector(changeLabel:) keyEquivalent:@""];
+    [labelItem setRepresentedObject:light];
+    
     [item setSubmenu:[[NSMenu alloc] init]];
     [[item submenu] addItem:sliderItem];
+    [[item submenu] addItem:labelItem];
     
 	[self updateLightMenuItem:item];
 	
@@ -136,6 +156,7 @@
 	
 	[light addLightObserver:self];
 }
+
 /**
  *  Removes the light from the menu and array. Also removes self as an observer for that light.
  */
