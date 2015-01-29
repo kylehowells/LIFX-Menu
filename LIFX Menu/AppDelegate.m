@@ -9,7 +9,7 @@
 #import "LIFXKit.framework/Headers/LIFXKit.h"
 #import "AppDelegate.h"
 #import "LaunchAtLoginController.h"
-
+#import "LXMSliderMenuItem.h"
 
 @interface AppDelegate () <LFXLightCollectionObserver, LFXLightObserver>
 @property (nonatomic, strong) NSStatusItem *statusItem;
